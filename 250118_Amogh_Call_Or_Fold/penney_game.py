@@ -4,13 +4,6 @@ from collections import Counter
 random.seed(42)  # reproducibility
 
 def play_one_race(seq_a, seq_b):
-    """
-    Flip a fair coin until seq_a or seq_b appears as the most recent 3 tosses.
-    Returns A if seq_a appears first and B if seq_b appears first.
-
-    We keep only a rolling window of the last 3 tosses, since a length-3
-    pattern can only ever match against the three most recent flips.
-    """
     window = ""
     for _ in range(3):
         window += random.choice("HT")
